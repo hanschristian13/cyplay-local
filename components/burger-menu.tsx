@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import BurgerMenuItem from './burger-menu-item';
+import About from './about';
+import { useDisableBodyScroll } from '@/lib/helper';
 
 export default function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +13,9 @@ export default function BurgerMenu() {
     setIsOpen(!isOpen);
   };
   const pathname = usePathname();
+
+  useDisableBodyScroll(isOpen); 
+
   return (
     <React.Fragment>
       <button
@@ -26,7 +31,7 @@ export default function BurgerMenu() {
         </svg>
       </button>
       <div 
-        className={`flex flex-col gap-y-4 w-full h-[calc(100vh-52px)] py-6 backdrop-blur-xl bg-[rgba(8,9,10,0.8)] ${isOpen ? 'fixed top-[54px] left-0' : 'hidden'}`}
+        className={`flex flex-col gap-y-4 w-full h-[calc(100vh-52px)] py-6 backdrop-blur-xl bg-[rgba(8,9,10,0.85)] ${isOpen ? 'fixed top-[52px] left-0' : 'hidden'}`}
       >
         <BurgerMenuItem
           pathname={pathname}
@@ -44,6 +49,9 @@ export default function BurgerMenu() {
           <span className='text-white'>About Us</span>
           <span className='text-white/60'>Learn about our products and services</span>
         </BurgerMenuItem>
+        <div className='mt-auto'>
+          <About />
+        </div>
       </div>
     </React.Fragment>
   );
