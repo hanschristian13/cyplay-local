@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #08090A;
+  --foreground: #171717;
+  --text-color: #08090A;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #08090A;
+    --foreground: #ededed;
+    --text-color: #08090A;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+  @apply fixed top-0 left-0 right-0 z-10 flex items-center justify-between h-[53px] px-4 py-3 backdrop-blur-xl bg-[rgba(8,9,10,0.8)] border-b border-[rgba(255,255,255,0.1)];
+}
+
+h3 {
+  @apply text-2xl font-semibold text-white capitalize leading-5;
+}
+
+p {
+  @apply text-sm font-normal text-white/50;
+}
+
+.bgmenu {
+  background: linear-gradient(90deg, rgba(8, 9, 10, 0) 0%, rgba(255, 188, 0, 0.06) 25%, rgba(255, 188, 0, 0.25) 50.5%, rgba(255, 188, 0, 0.06) 75%, rgba(8, 9, 10, 0) 100%);
+}
