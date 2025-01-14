@@ -17,7 +17,7 @@ const OlympusRisen = () => {
       />
       <div className='absolute bottom-0 w-full px-4 py-[10px]'>
         <ButtonPlay
-          url='#'
+          url='http://139.162.47.9/ice-2025/demo-game/olympus-risen/?useMock=true&enableCheat=true'
         />
       </div>
     </div>
