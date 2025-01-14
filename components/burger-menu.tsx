@@ -21,8 +21,8 @@ export default function BurgerMenu() {
         <span className="sr-only">Menu</span>
         <svg className="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <rect className={`origin-center transition-all translate-x-[3px] duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] ${isOpen ? 'hidden' : ''}`} y="7" width="10" height="2" rx="1"></rect>
-          <rect className={`origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1)] ${isOpen ? 'translate-x-0 translate-y-0 -rotate-45' : ''}`} y="7" width="16" height="2" rx="1"></rect>
-          <rect className={`origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1)] ${isOpen ? '-translate-x-0 -translate-y-0 rotate-45' : ''}`} y="7" width="16" height="2" rx="1"></rect>
+          <rect className={`origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1)] ${isOpen ? 'translate-x-0 translate-y-0 -rotate-45' : '-translate-y-[5px]'}`} y="7" width="16" height="2" rx="1"></rect>
+          <rect className={`origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1)] ${isOpen ? 'translate-x-0 translate-y-0 rotate-45' : 'translate-y-[5px] '}`} y="7" width="16" height="2" rx="1"></rect>
         </svg>
       </button>
       <div 
