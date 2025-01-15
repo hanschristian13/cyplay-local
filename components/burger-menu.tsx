@@ -31,7 +31,7 @@ export default function BurgerMenu() {
         </svg>
       </button>
       <div 
-        className={`flex flex-col gap-y-4 w-full h-[calc(100vh-52px)] py-6 backdrop-blur-xl bg-[rgba(8,9,10,0.85)] ${isOpen ? 'fixed top-[52px] left-0' : 'hidden'}`}
+        className={`flex flex-col gap-y-4 w-full h-[calc(100vh-52px)] py-6 backdrop-blur-3xl bg-[rgba(0,0,0,0.95)] backdrop-saturate-150 ${isOpen ? 'fixed top-[52px] left-0' : 'hidden'}`}
       >
         <BurgerMenuItem
           pathname={pathname}
