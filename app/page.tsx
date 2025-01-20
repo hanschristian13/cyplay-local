@@ -19,8 +19,8 @@ export default function Home() {
         <ZeusLegacy />
         <OlympusRisen />
         <CopBuddies />
-        <SpeedAndFury />
-        <WildCatch />
+        {/* <SpeedAndFury /> */}
+        {/* <WildCatch /> */}
         <JossJossJoss />
         <ComingSoon />
         <About />
