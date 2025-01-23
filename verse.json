@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/demo/athens",
-      "destination": "http:139.162.47.9:7001/coc"
+      "source": "/demo/coc",
+      "destination": "https://demo.cyberyokai.com/demo/game/coc?useMock=true&enableCheat=true"
     },
     {
-      "source": "/demo/zeus",
-      "destination": "http:139.162.47.9:7002/kagura"
+      "source": "/demo/kagura",
+      "destination": "https://demo.cyberyokai.com/demo/game/kagura?useMock=true&enableCheat=true"
     }
   ]
 }
