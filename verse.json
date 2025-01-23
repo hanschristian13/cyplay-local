@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/demo/athens",
+      "destination": "http:139.162.47.9:7001/coc"
+    },
+    {
+      "source": "/demo/zeus",
+      "destination": "http:139.162.47.9:7002/kagura"
+    }
+  ]
+}
