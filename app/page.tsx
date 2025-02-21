@@ -83,7 +83,6 @@ export default function Home() {
                   {/* Active indicator with bottom glow effect */}
                   {activeTab === category && (
                     <>
-                      {/* Bottom glow effect */}
                       <div 
                         className="absolute bottom-0 left-0 w-full h-[2px]"
                         style={{
@@ -91,7 +90,6 @@ export default function Home() {
                           boxShadow: '0 0 8px 2px rgba(255, 188, 0, 0.6)',
                         }}
                       />
-                      {/* Triangle indicator with glow */}
                       <div className="absolute -bottom-[6px] left-1/2 transform -translate-x-1/2">
                         <div 
                           className="w-3 h-3 bg-[#FFBC00] rotate-45 transform"
@@ -107,8 +105,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-8 items-center mt-8 w-full">
-          {getGames(activeTab)}
+        <div className="flex flex-col items-center w-full relative mt-[-5px]">
+          <div className="flex flex-col gap-y-8">
+            {getGames(activeTab)}
+          </div>
         </div>
         <About />
       </main>

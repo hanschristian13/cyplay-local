@@ -7,7 +7,7 @@ import ButtonPlay from '@/components/button'
 
 const AthenaAres = ({ showButton = true }) => {
   return (
-    <div className='relative mt-[53px]'>
+    <div className='relative'>
       <Image
         src={GameImage.src}
         alt='Athena Ares'
