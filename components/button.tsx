@@ -12,7 +12,7 @@ const ButtonPlay: React.FC<ButtonLinkProps> = ({ url, children }) => {
   return (
     <Link 
       href={url}
-      className='flex items-center justify-center w-full h-9 rounded-3xl text-[var(--text-color)] text-sm font-bold'
+      className='flex items-center justify-center w-full h-12 rounded-3xl text-[var(--text-color)] text-sm font-bold'
       target='_blank'
       rel='noopener noreferrer'
       style={{
