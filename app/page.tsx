@@ -66,46 +66,50 @@ export default function Home() {
   return (
     <Transition>
       <main className="flex flex-col items-center pt-[60px]">
-        <div className="w-full top-[40px] bg-[#08090A] z-60 border-b border-gray-800">
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex md:justify-center whitespace-nowrap">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className={`px-3 py-2 transition-colors text-center relative ${
-                    activeTab === category 
-                      ? 'text-[#FFFFFF] font-bold' 
-                      : 'text-gray-400 hover:text-gray-200'
-                  }`}
-                  onClick={() => setActiveTab(category)}
-                >
-                  {category}
-                  {/* Active indicator with bottom glow effect */}
-                  {activeTab === category && (
-                    <>
-                      <div 
-                        className="absolute bottom-0 left-0 w-full h-[2px]"
-                        style={{
-                          background: '#FFBC00',
-                          boxShadow: '0 0 8px 2px rgba(255, 188, 0, 0.6)',
-                        }}
-                      />
-                      <div className="absolute -bottom-[6px] left-1/2 transform -translate-x-1/2">
-                        <div 
-                          className="w-3 h-3 bg-[#FFBC00] rotate-45 transform"
-                          style={{
-                            boxShadow: '0 0 8px rgba(255, 188, 0, 0.6)',
-                          }}
-                        />
-                      </div>
-                    </>
-                  )}
-                </button>
-              ))}
+        <div className="fixed top-[52px] left-0 right-0 backdrop-blur-sm bg-black/20 z-10">
+          <div className="w-full relative">
+            <div className="overflow-y-hidden overflow-x-auto scrollbar-hide touch-pan-x cursor-pointer">
+              <div className="max-w-7xl mx-auto px-4">
+                <div className="flex md:justify-center whitespace-nowrap">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      className={`px-3 py-2 transition-colors text-center relative ${
+                        activeTab === category 
+                          ? 'text-[#FFFFFF] font-bold' 
+                          : 'text-gray-400 hover:text-gray-200'
+                      }`}
+                      onClick={() => setActiveTab(category)}
+                    >
+                      {category}
+                      {activeTab === category && (
+                        <>
+                          <div 
+                            className="absolute bottom-0 left-0 w-full h-[2px]"
+                            style={{
+                              background: '#FFBC00',
+                              boxShadow: '0 0 8px 2px rgba(255, 188, 0, 0.6)',
+                            }}
+                          />
+                          <div className="absolute -bottom-[6px] left-1/2 transform -translate-x-1/2">
+                            <div 
+                              className="w-3 h-3 bg-[#FFBC00] rotate-45 transform"
+                              style={{
+                                boxShadow: '0 0 8px rgba(255, 188, 0, 0.6)',
+                              }}
+                            />
+                          </div>
+                        </>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
+          <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-800/50" />
         </div>
-        <div className="flex flex-col items-center w-full relative mt-[-5px]">
+        <div className="flex flex-col items-center w-full pt-[100px] relative mt-[-70px]">
           <div className="flex flex-col gap-y-8">
             {getGames(activeTab)}
           </div>
