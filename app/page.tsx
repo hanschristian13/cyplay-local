@@ -22,7 +22,6 @@ import Kagura from "@/components/section/reskin/kagura";
 import Kaisa from "@/components/section/reskin/kaisa";
 import Nasus from "@/components/section/reskin/nasus";
 import Seraphine from "@/components/section/reskin/seraphine";
-/*
 import Commando from '@/components/section/blockbuster/commando';
 import GoldRushShowdown from '@/components/section/blockbuster/gold-rush-showdown';
 import Caesar from '@/components/section/empire/caecar';
@@ -31,7 +30,6 @@ import Shogun from '@/components/section/empire/shogun';
 import EnergSuperLaga from '@/components/section/indo-local/energ-super-laga';
 import GaliMania from '@/components/section/indo-local/gali-mania';
 import NabungTapTap from '@/components/section/indo-local/nabung-tap-tap';
-*/
 
 type CategoryType = 'Legends' | 'Blockbuster' | 'Casual' | 'Empire' | 'Indo Local' | 'Reskin' | 'Coming Soon';
 type GameComponents = { [key in CategoryType]: React.ReactNode[] };
@@ -46,8 +44,7 @@ export default function Home() {
     "Empire": [],
     "Indo Local": [<JossJossJoss key="joss" />],
     "Reskin": [<Ahri key="ahri" />, <Akali key="akali" />, <Arcane key="arcane" />, <ClashHeroes key="clashheroes" />, <Coc key="coc" />, <Evelynn key="evelynn" />, <Hayabusa key="hayabusa" />, <Kagura key="kagura" />, <Kaisa key="kaisa" />, <Nasus key="nasus" />, <Seraphine key="seraphine" />],
-    //"Coming Soon": [<EnergSuperLaga key="energ" />, <GaliMania key="gali" />, <NabungTapTap key="nabung" />, <Caesar key="caesar" />, <Shogun key="shogun" />, <Pharaoh key="pharaoh" />, <GoldRushShowdown key="gold" />, <WildCatch key="wild" />, <SpeedAndFury key="speed" />, <Commando key="commando" />]
-    "Coming Soon": [<WildCatch key="wild" />, <SpeedAndFury key="speed" />]
+    "Coming Soon": [<EnergSuperLaga key="energ" />, <GaliMania key="gali" />, <NabungTapTap key="nabung" />, <Caesar key="caesar" />, <Shogun key="shogun" />, <Pharaoh key="pharaoh" />, <GoldRushShowdown key="gold" />, <WildCatch key="wild" />, <SpeedAndFury key="speed" />, <Commando key="commando" />]
   };
 
   // Filter out categories with no content
@@ -110,7 +107,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-800/50" />
         </div>
         <div className="flex flex-col items-center w-full pt-[100px] relative mt-[-70px]">
-          <div className="flex flex-col gap-y-8">
+          <div className={`flex flex-col ${activeTab === 'Coming Soon' ? 'gap-y-0' : 'gap-y-8'}`}>
             {getGames(activeTab)}
           </div>
         </div>
