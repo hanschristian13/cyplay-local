@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import GameImage from '@/public/assets/joss-joss-joss.webp'
+import GameImage from '@/public/assets/commando.png'
 import ButtonPlay from '@/components/button'
 
 const Commando = ({ showButton = false }) => {

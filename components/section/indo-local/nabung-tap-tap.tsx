@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import GameImage from '@/public/assets/joss-joss-joss.webp'
+import GameImage from '@/public/assets/nabung-tap-tap.png'
 import ButtonPlay from '@/components/button'
 
 const NabungTapTap = ({ showButton = false }) => {
