@@ -5,7 +5,7 @@ import Image from 'next/image'
 import GameImage from '@/public/assets/nabung-tap-tap.png'
 import ButtonPlay from '@/components/button'
 
-const NabungTapTap = ({ showButton = false }) => {
+const NabungTapTap = ({ showButton = true }) => {
   return (
     <div className='relative'>
       <Image
@@ -18,7 +18,7 @@ const NabungTapTap = ({ showButton = false }) => {
       {showButton && (
       <div className='absolute bottom-0 w-full px-4 py-[10px]'>
         <ButtonPlay
-          url='http://139.162.47.9/ice-2025/demo-game/vanilla-joss/?useMock=true&enableCheat=true'
+          url='http://139.162.47.9/prototype/taptap-game/celengan-taptap/v0.2/'
         />
       </div>
       )}
