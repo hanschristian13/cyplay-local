@@ -42,9 +42,9 @@ export default function Home() {
     "Blockbuster": [<CopBuddies key="cop" />],
     "Casual": [],
     "Empire": [],
-    "Indo Local": [<JossJossJoss key="joss" />],
+    "Indo Local": [<JossJossJoss key="joss" />, <EnergSuperLaga key="energ" />, <GaliMania key="gali" />, <NabungTapTap key="nabung" />],
     "Reskin": [<Ahri key="ahri" />, <Akali key="akali" />, <Arcane key="arcane" />, <ClashHeroes key="clashheroes" />, <Coc key="coc" />, <Evelynn key="evelynn" />, <Hayabusa key="hayabusa" />, <Kagura key="kagura" />, <Kaisa key="kaisa" />, <Nasus key="nasus" />, <Seraphine key="seraphine" />],
-    "Coming Soon": [<EnergSuperLaga key="energ" />, <GaliMania key="gali" />, <NabungTapTap key="nabung" />, <Caesar key="caesar" />, <Shogun key="shogun" />, <Pharaoh key="pharaoh" />, <GoldRushShowdown key="gold" />, <WildCatch key="wild" />, <SpeedAndFury key="speed" />, <Commando key="commando" />]
+    "Coming Soon": [<Caesar key="caesar" />, <Shogun key="shogun" />, <Pharaoh key="pharaoh" />, <GoldRushShowdown key="gold" />, <WildCatch key="wild" />, <SpeedAndFury key="speed" />, <Commando key="commando" />]
   };
 
   // Filter out categories with no content
