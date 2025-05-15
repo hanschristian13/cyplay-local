@@ -14,8 +14,6 @@ import Transition from "@/components/transition";
 import Ahri from "@/components/section/reskin/ahri";
 import Akali from "@/components/section/reskin/akali";
 import Arcane from "@/components/section/reskin/arcane";
-import ClashHeroes from "@/components/section/reskin/clash-heroes";
-import Coc from "@/components/section/reskin/coc";
 import Evelynn from "@/components/section/reskin/evelynn";
 import Hayabusa from "@/components/section/reskin/hayabusa";
 import Kagura from "@/components/section/reskin/kagura";
@@ -30,12 +28,15 @@ import Shogun from '@/components/section/empire/shogun';
 import EnergSuperLaga from '@/components/section/indo-local/energ-super-laga';
 import GaliMania from '@/components/section/indo-local/gali-mania';
 import NabungTapTap from '@/components/section/indo-local/nabung-tap-tap';
+import ClashHeroes from "@/components/section/supercell/clash-heroes";
+import Coc from "@/components/section/supercell/coc";
+import CocReborn from '@/components/section/supercell/coc-reborn';
 
-type CategoryType = 'Legends' | 'Blockbuster' | 'Casual' | 'Empire' | 'Indo Local' | 'Reskin' | 'Coming Soon';
+type CategoryType = 'Legends' | 'Blockbuster' | 'Casual' | 'Empire' | 'Indo Local' | 'SuperCell' | 'Reskin' | 'Coming Soon';
 type GameComponents = { [key in CategoryType]: React.ReactNode[] };
 
 export default function Home() {
-  const allCategories: CategoryType[] = ['Legends', 'Blockbuster', 'Casual', 'Empire', 'Indo Local', 'Reskin', 'Coming Soon'];
+  const allCategories: CategoryType[] = ['Legends', 'Blockbuster', 'Casual', 'Empire', 'Indo Local', 'SuperCell',  'Reskin', 'Coming Soon'];
   
   const gamesByCategory: GameComponents = {
     "Legends": [<AthenaAres key="athena" />, <ZeusLegacy key="zeus" />, <OlympusRisen key="olympus" />],
@@ -43,7 +44,8 @@ export default function Home() {
     "Casual": [],
     "Empire": [],
     "Indo Local": [<JossJossJoss key="joss" />, <EnergSuperLaga key="energ" />, <GaliMania key="gali" />, <NabungTapTap key="nabung" />],
-    "Reskin": [<Ahri key="ahri" />, <Akali key="akali" />, <Arcane key="arcane" />, <ClashHeroes key="clashheroes" />, <Coc key="coc" />, <Evelynn key="evelynn" />, <Hayabusa key="hayabusa" />, <Kagura key="kagura" />, <Kaisa key="kaisa" />, <Nasus key="nasus" />, <Seraphine key="seraphine" />],
+    "SuperCell" : [<CocReborn key="cocreborn" />, <ClashHeroes key="clashheroes" />, <Coc key="coc" />],
+    "Reskin": [<Ahri key="ahri" />, <Akali key="akali" />, <Arcane key="arcane" />, <Evelynn key="evelynn" />, <Hayabusa key="hayabusa" />, <Kagura key="kagura" />, <Kaisa key="kaisa" />, <Nasus key="nasus" />, <Seraphine key="seraphine" />],
     "Coming Soon": [<Caesar key="caesar" />, <Shogun key="shogun" />, <Pharaoh key="pharaoh" />, <GoldRushShowdown key="gold" />, <WildCatch key="wild" />, <SpeedAndFury key="speed" />, <Commando key="commando" />]
   };
 
