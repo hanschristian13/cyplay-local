@@ -18,7 +18,7 @@ const ClashHeroes = ({ showButton = true }) => {
         {showButton && (
         <div className='absolute bottom-0 w-full px-4 py-[10px]'>
           <ButtonPlay
-            url='https://demo.cyberyokai.com/games/slots/clash-heroes?useMock=true&enableCheat=true'
+            url='https://demo.cyberyokai.com/cyplay/slots/reskin-clash-heroes?useMock=true&enableCheat=true'
           />
         </div>
         )}
