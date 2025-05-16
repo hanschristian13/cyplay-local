@@ -18,7 +18,7 @@ const GaliMania = ({ showButton = true }) => {
       {showButton && (
       <div className='absolute bottom-0 w-full px-4 py-[10px]'>
         <ButtonPlay
-          url='http://139.162.47.9/prototype/crash-game/gali-mania/offline/'
+          url='https://demo.cyberyokai.com/cyplay/crash-game/gali-mania/?useMock=true&enableCheat=true'
         />
       </div>
       )}

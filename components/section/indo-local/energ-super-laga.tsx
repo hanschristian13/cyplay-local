@@ -18,7 +18,7 @@ const EnergSuperLaga = ({ showButton = true }) => {
       {showButton && (
       <div className='absolute bottom-0 w-full px-4 py-[10px]'>
         <ButtonPlay
-          url='http://139.162.47.9/prototype/slot-game/ener-g/v0.12/?useMock=true&enableCheat=true'
+          url='https://demo.cyberyokai.com/cyplay/slots/energ-superlaga/?useMock=true&enableCheat=true'
         />
       </div>
       )}

@@ -18,7 +18,7 @@ const NabungTapTap = ({ showButton = true }) => {
       {showButton && (
       <div className='absolute bottom-0 w-full px-4 py-[10px]'>
         <ButtonPlay
-          url='http://139.162.47.9/prototype/taptap-game/celengan-taptap/v0.2/'
+          url='https://demo.cyberyokai.com/cyplay/taptap/celengan-taptap/?useMock=true&enableCheat=true'
         />
       </div>
       )}

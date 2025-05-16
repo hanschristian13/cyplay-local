@@ -31,12 +31,13 @@ import NabungTapTap from '@/components/section/indo-local/nabung-tap-tap';
 import ClashHeroes from "@/components/section/supercell/clash-heroes";
 import Coc from "@/components/section/supercell/coc";
 import CocReborn from '@/components/section/supercell/coc-reborn';
+import Dota from "@/components/section/campaign/dota";
 
-type CategoryType = 'Legends' | 'Blockbuster' | 'Casual' | 'Empire' | 'Indo Local' | 'SuperCell' | 'Reskin' | 'Coming Soon';
+type CategoryType = 'Legends' | 'Blockbuster' | 'Casual' | 'Empire' | 'Indo Local' | 'SuperCell' | 'Reskin' | 'Campaign' | 'Coming Soon';
 type GameComponents = { [key in CategoryType]: React.ReactNode[] };
 
 export default function Home() {
-  const allCategories: CategoryType[] = ['Legends', 'Blockbuster', 'Casual', 'Empire', 'Indo Local', 'SuperCell',  'Reskin', 'Coming Soon'];
+  const allCategories: CategoryType[] = ['Legends', 'Blockbuster', 'Casual', 'Empire', 'Indo Local', 'SuperCell', 'Reskin', 'Campaign', 'Coming Soon'];
   
   const gamesByCategory: GameComponents = {
     "Legends": [<AthenaAres key="athena" />, <ZeusLegacy key="zeus" />, <OlympusRisen key="olympus" />],
@@ -46,6 +47,7 @@ export default function Home() {
     "Indo Local": [<JossJossJoss key="joss" />, <EnergSuperLaga key="energ" />, <GaliMania key="gali" />, <NabungTapTap key="nabung" />],
     "SuperCell" : [<CocReborn key="cocreborn" />, <ClashHeroes key="clashheroes" />, <Coc key="coc" />],
     "Reskin": [<Ahri key="ahri" />, <Akali key="akali" />, <Arcane key="arcane" />, <Evelynn key="evelynn" />, <Hayabusa key="hayabusa" />, <Kagura key="kagura" />, <Kaisa key="kaisa" />, <Nasus key="nasus" />, <Seraphine key="seraphine" />],
+    "Campaign": [<Dota key="dota" />,],
     "Coming Soon": [<Caesar key="caesar" />, <Shogun key="shogun" />, <Pharaoh key="pharaoh" />, <GoldRushShowdown key="gold" />, <WildCatch key="wild" />, <SpeedAndFury key="speed" />, <Commando key="commando" />]
   };
 

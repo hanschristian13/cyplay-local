@@ -18,7 +18,7 @@ const Ahri = ({ showButton = true }) => {
         {showButton && (
         <div className='absolute bottom-0 w-full px-4 py-[10px]'>
           <ButtonPlay
-            url='https://demo.cyberyokai.com/games/slots/ahri?useMock=true&enableCheat=true'
+            url='https://demo.cyberyokai.com/cyplay/slots/reskin-ahri?useMock=true&enableCheat=true'
           />
         </div>
         )}
