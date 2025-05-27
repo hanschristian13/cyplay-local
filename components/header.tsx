@@ -54,7 +54,7 @@ const Header = () => {
   return (
     <>
       <Modal isOpen={modal} onClose={() => setModal(false)}>
-        <div className="p-[23px] text-[#4D4D4D] space-y-[8px]">
+        <div className="p-[23px] text-[#4D4D4D] space-y-[8px] max-w-[640px] mx-auto">
           <div className="flex space-x-[4px] items-center">
             <button
               onClick={() => setModal(false)}
