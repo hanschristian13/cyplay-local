@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 // import AthenaAres from '@/components/section/legends/athena-ares';
 // import ZeusLegacy from '@/components/section/legends/zeus-legacy';
 // import OlympusRisen from '@/components/section/legends/olympus-risen';
@@ -32,36 +32,8 @@ import { useEffect, useState } from 'react';
 // import Coc from '@/components/section/supercell/coc';
 // import CocReborn from '@/components/section/supercell/coc-reborn';
 // import Dota from '@/components/section/campaign/dota';
-import Slider1 from '@/public/assets/slider/1.webp';
-import Slider2 from '@/public/assets/slider/2.webp';
-import Slider3 from '@/public/assets/slider/3.webp';
-import Slider4 from '@/public/assets/slider/4.webp';
-import Slider5 from '@/public/assets/slider/5.webp';
-import Slider6 from '@/public/assets/slider/6.webp';
-import Slider7 from '@/public/assets/slider/7.webp';
 
-import athena_vs_ares from '@/public/assets/gamelist/athena_vs_ares.webp';
-import olympus_risen from '@/public/assets/gamelist/olympus_risen.webp';
-import zeus_legacy from '@/public/assets/gamelist/zeus_legacy.webp';
-import cop_buddies from '@/public/assets/gamelist/cop_buddies.webp';
-import joss_joss_joss from '@/public/assets/gamelist/joss_joss_joss.webp';
-import energ_super_laga from '@/public/assets/gamelist/energ_super_laga.webp';
-import nabung_tap_tap from '@/public/assets/gamelist/nabung_tap_tap.webp';
-import gali_mania from '@/public/assets/gamelist/gali_mania.webp';
-import coc_reborn from '@/public/assets/gamelist/coc_reborn.webp';
-import clash_heroes from '@/public/assets/gamelist/clash_heroes.webp';
-import coc from '@/public/assets/gamelist/coc.webp';
-import ahri from '@/public/assets/gamelist/ahri.webp';
-import akali from '@/public/assets/gamelist/akali.webp';
-import arcane from '@/public/assets/gamelist/arcane.webp';
-import evelynn from '@/public/assets/gamelist/evelynn.webp';
-import hayabusa from '@/public/assets/gamelist/hayabusa.webp';
-import kagura from '@/public/assets/gamelist/kagura.webp';
-import kaisa from '@/public/assets/gamelist/kaisa.webp';
-import nasus from '@/public/assets/gamelist/nasus.webp';
-import seraphine from '@/public/assets/gamelist/seraphine.webp';
-import dota from '@/public/assets/gamelist/dota.webp';
-
+import { IoIosInformationCircleOutline } from 'react-icons/io';
 import Image from 'next/image';
 import classNames from 'classnames';
 import Link from 'next/link';
@@ -69,12 +41,82 @@ import { useSearchParams } from 'next/navigation';
 import { __GAME_LIST__ } from '@/constant';
 import { Suspense } from 'react';
 
-const GameCard = ({ imageSrc, title }: { imageSrc: string; title: string }) => {
+import { getImageSrc } from '@/lib/helper';
+import Carousel from '@/components/carousel';
+import ModalDetail from '@/components/modal-detail';
+
+const GameCard = ({
+  imageSrc,
+  title,
+  data,
+  onSelectDetail,
+}: {
+  imageSrc: string;
+  title: string;
+  data: any;
+  onSelectDetail: any;
+}) => {
   return (
-    <div className="min-full relative">
+    <div className="min-w-full relative">
+      <button
+        onClick={onSelectDetail}
+        className="absolute top-[24px] right-[10px]"
+      >
+        <IoIosInformationCircleOutline size={23} />
+      </button>
+
       <Image src={imageSrc} alt={title} layout="responsive" />
-      <div className="absolute bottom-0  w-full bg-white flex items-center justify-center rounded-b rounded-b-[25px] h-[58.7398px]">
-        <div className="absolute -right-[15.5px] -bottom-[px]">
+      <div className="absolute bottom-0  w-full bg-white flex items-center justify-start rounded-b rounded-b-[25px] h-[58.7398px]">
+        <div className="flex space-x-[23px] px-[15.53px]">
+          <div className="text-[#72757A] text-[12px]">
+            <h4>Volatility</h4>
+            <h2 className="text-[#4D4D4D] font-[700] capitalize">
+              {data?.volatility}
+            </h2>
+          </div>
+          <div className="text-[#72757A] text-[12px]">
+            <h4>RTP</h4>
+            <h2 className="text-[#4D4D4D] font-[700]">{data?.rtp ?? 0} %</h2>
+          </div>
+          <div className="text-[#72757A] text-[12px]">
+            <h4>Maxwin</h4>
+            <h2 className="text-[#4D4D4D] font-[700]">x{data?.maxwin ?? 0}</h2>
+          </div>
+          <div className="text-[#72757A] text-[12px]">
+            <h4>Betways</h4>
+            <h2 className="text-[#4D4D4D] font-[700]">{data?.betways ?? 0}</h2>
+          </div>
+        </div>
+        <button
+          className="absolute -right-[15.5px] -bottom-[px]"
+          onClick={() => window.open(data?.url, '_blank')}
+        >
+          <div className="right-1/2 absolute top-1/2 transform translate-x-1/2 -translate-y-1/2 text-white">
+            <div className=" flex flex-col  space-y-[25px]">
+              <h1
+                style={{ textShadow: '0px 0px 10px white' }}
+                className="absolute font-[700] text-[15px]  "
+              >
+                PLAY
+              </h1>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="29"
+                height="10"
+                viewBox="0 0 29 10"
+                fill="none"
+              >
+                <path
+                  d="M5.70764 4.81823H26.9064M26.9064 4.81823L23.1683 1.08005M26.9064 4.81823L23.1683 8.55641"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <circle cx="1.35107" cy="4.81824" r="1" fill="white" />
+              </svg>
+            </div>
+          </div>
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="102"
@@ -142,7 +184,7 @@ const GameCard = ({ imageSrc, title }: { imageSrc: string; title: string }) => {
               </radialGradient>
             </defs>
           </svg>
-        </div>
+        </button>
       </div>
     </div>
   );
@@ -163,83 +205,6 @@ const GameCard = ({ imageSrc, title }: { imageSrc: string; title: string }) => {
 //     </div>
 //   );
 // };
-const Slider = () => {
-  const images = [
-    Slider1,
-    Slider2,
-    Slider3,
-    Slider4,
-    Slider5,
-    Slider6,
-    Slider7,
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change slide every 3 seconds
-
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, [images.length]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  return (
-    <div
-      className="relative w-full  overflow-x-hidden isolation"
-      onTouchStart={(e) => {
-        const touchStartX = e.touches[0].clientX;
-        e.currentTarget.dataset.touchStartX = touchStartX.toString();
-      }}
-      onTouchEnd={(e) => {
-        const touchStartX = parseFloat(
-          e.currentTarget.dataset.touchStartX || '0'
-        );
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchDifference = touchStartX - touchEndX;
-
-        if (touchDifference > 50) {
-          // Swipe left
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        } else if (touchDifference < -50) {
-          // Swipe right
-          setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? images.length - 1 : prevIndex - 1
-          );
-        }
-      }}
-    >
-      <h3 className=" absolute top-[30px] text-[20px] text-[#4D4D4D] z-0">
-        COMING <strong className="text-[#FBA10F]">SOON</strong>
-      </h3>
-      <div
-        className="flex transition-transform duration-500 z-10"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((image, index) => (
-          <div key={index} className="min-w-full">
-            <Image
-              src={image}
-              alt={`Slider ${index + 1}`}
-              layout="responsive"
-            />
-          </div>
-        ))}
-      </div>
-      <div className="absolute bottom-[25px] left-1/2 transform -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={` rounded-full ${
-              currentIndex === index
-                ? 'bg-[#FFFFFF] w-4 h-[5px]'
-                : 'bg-[#00000080] w-[5px] h-[5px]'
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
 
 // type CategoryType =
 //   | 'Legends'
@@ -260,9 +225,9 @@ function MainComponent() {
     // casual: 'Casual',
     // empire: 'Empire',
     indo_local: 'Indo Local',
-    // supercell: 'SuperCell',
+    supercell: 'SuperCell',
     reskin: 'Reskin',
-    // campaign: 'Campaign',
+    campaign: 'Campaign',
     // coming_soon: 'Coming Soon',
   };
 
@@ -326,40 +291,20 @@ function MainComponent() {
   const tab = query.get('tab');
   const selectedTab = tab ? (allCategories[tab] ? tab : 'legends') : 'legends';
 
-  const getImageSrc = (key: string) => {
-    const images: { [key: string]: any } = {
-      athena_vs_ares,
-      olympus_risen,
-      zeus_legacy,
-      cop_buddies,
-      joss_joss_joss,
-      energ_super_laga,
-      nabung_tap_tap,
-      gali_mania,
-      coc_reborn,
-      clash_heroes,
-      coc,
-      ahri,
-      akali,
-      arcane,
-      evelynn,
-      hayabusa,
-      kagura,
-      kaisa,
-      nasus,
-      seraphine,
-      dota,
-    };
-    return images[key] || '';
-  };
-
   const data = __GAME_LIST__?.find((x) => x.category === selectedTab);
+
+  const [isModalOpen, setModalOpen] = useState(null);
 
   return (
     <>
-      <div className="h-screen px-[23px] max-w-[640px]  mx-auto">
-        <Slider />
-        <div className="flex  w-full space-x-[22px] -mt-[15px]">
+      <ModalDetail
+        isOpen={!!isModalOpen}
+        onClose={() => setModalOpen(null)}
+        data={isModalOpen}
+      />
+      <div className="h-screen px-[23px] max-w-[640px] mx-auto">
+        <Carousel />
+        <div className="flex w-full h-[31.882px] space-x-[22px] -mt-[15px] !overflow-x-auto scrollbar-hide">
           {Object.keys(allCategories)?.map((key) => (
             <Link
               key={key}
@@ -378,7 +323,7 @@ function MainComponent() {
                   {allCategories[key]}
                   <span
                     className={classNames(
-                      'absolute -bottom-[10px] left-0 w-full h-[6px] rounded-full bg-[#FBA10F] transition-transform duration-300',
+                      'absolute -bottom-[8px] left-1/2 transform -translate-x-1/2 w-[60%] h-[6px] rounded-full bg-[#FBA10F] transition-transform duration-300',
                       selectedTab === key ? 'scale-x-100' : 'scale-x-0'
                     )}
                     style={{
@@ -391,11 +336,13 @@ function MainComponent() {
           ))}
         </div>
 
-        <div className="flex flex-col space-y-[12.79px] py-[12.79px]">
+        <div className="flex flex-col space-y-[12.79px] py-[6.79px]">
           {data?.games?.map((game: any) => (
             <GameCard
+              data={game}
               key={game?.key}
               title={game?.key}
+              onSelectDetail={() => setModalOpen(game)}
               imageSrc={getImageSrc(game?.key)}
             />
           ))}

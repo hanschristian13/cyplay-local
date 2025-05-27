@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logoCyPlay from '@/public/assets/logo-black.svg';
+import { IoSearch } from 'react-icons/io5';
 //import BurgerMenu from '@/components/burger-menu';
 
 const Header = () => {
@@ -20,7 +21,10 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div>xxx</div>
+      
+      <button className="text-[#4D4D4D] rounded-full w-[28px] h-[28px] flex items-center border border-[#4D4D4D] justify-center bg-[#F5F5F5]">
+        <IoSearch />
+      </button>
       {/* <BurgerMenu /> */}
     </header>
   );

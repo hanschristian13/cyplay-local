@@ -13,7 +13,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: '#040406',
+  themeColor: '#F5F5F5',
 };
 export const metadata: Metadata = {
   title: 'Cyber Yokai Play',
