@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import React from 'react';
+
 import frame from '@/public/assets/frame.svg';
 import Image from 'next/image';
 import { IoChevronBackCircle } from 'react-icons/io5';
 import { getImageSrc } from '@/lib/helper';
+import Modal from './modal';
 const ModalDetail = ({ isOpen, onClose, data }: any) => {
   return (
     <Modal isOpen={!!isOpen} onClose={() => onClose(null)}>
@@ -45,15 +46,21 @@ const ModalDetail = ({ isOpen, onClose, data }: any) => {
             </div>
             <div className="text-[#72757A] text-[12px]">
               <h4>RTP</h4>
-              <h2 className="text-[#4D4D4D] font-[700] text-[14px]">100%</h2>
+              <h2 className="text-[#4D4D4D] font-[700] text-[14px]">
+                {data?.rtp ?? 0} %
+              </h2>
             </div>
             <div className="text-[#72757A] text-[12px]">
               <h4>Maxwin</h4>
-              <h2 className="text-[#4D4D4D] font-[700] text-[14px]">x120000</h2>
+              <h2 className="text-[#4D4D4D] font-[700] text-[14px]">
+                x{data?.maxwin ?? 0}
+              </h2>
             </div>
             <div className="text-[#72757A] text-[12px]">
               <h4>Betways</h4>
-              <h2 className="text-[#4D4D4D] font-[700] text-[14px]">1200</h2>
+              <h2 className="text-[#4D4D4D] font-[700] text-[14px]">
+                {data?.betways ?? 0}
+              </h2>
             </div>
           </div>
         </div>
@@ -86,68 +93,6 @@ const ModalDetail = ({ isOpen, onClose, data }: any) => {
 
 export default ModalDetail;
 
-const Modal = ({
-  isOpen,
-  children,
-  onClose,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}) => {
-  // Prevent background scroll
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
-  // Close on ESC key
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, onClose]);
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-50"
-          onClick={onClose}
-          role="dialog"
-          aria-modal="true"
-        >
-          <motion.div
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="w-full h-full bg-white overflow-y-auto"
-            onClick={(e) => e.stopPropagation()} // Prevent click bubbling
-          >
-            {children}
-          </motion.div>
-        </div>
-      )}
-    </AnimatePresence>
-  );
-};
-
 const SvgArrow = () => {
   return (
     <div className="flex items-center w-full space-x-[4px] ">
@@ -166,7 +111,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 11.5002 14)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="8.50024"
@@ -176,7 +121,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 8.50024 14)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="8.50024"
@@ -186,7 +131,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 8.50024 11)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="5.50049"
@@ -196,7 +141,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 5.50049 11)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="5.50049"
@@ -206,7 +151,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 5.50049 8)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="2.5"
@@ -216,7 +161,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 2.5 8)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="8.50024"
@@ -226,7 +171,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 8.50024 5)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="5.50049"
@@ -236,7 +181,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 5.50049 5)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="11.5002"
@@ -246,7 +191,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 11.5002 2)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <rect
           x="8.50024"
@@ -256,7 +201,7 @@ const SvgArrow = () => {
           rx="1"
           transform="rotate(-180 8.50024 2)"
           fill="black"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
       </svg>
       <div className="h-[1px] bg-black bg-opacity-50 w-full" />
