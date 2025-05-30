@@ -88,7 +88,7 @@ const Header = () => {
         onClose={() => setDetails(null)}
         data={details}
       />
-      <header className="px-[22.78px] h-[72.67px] absolute top-0  shadow-background shadow-lg w-screen bg-background backdrop-blur-xl flex items-center justify-between  z-10 sticky top-0 ">
+      <header className="px-[22.78px] h-[72.67px] absolute top-0  shadow-background shadow-lg w-screen bg-background backdrop-blur-xl flex items-center justify-between  z-30 sticky top-0 ">
         <div className="relative aspect-[89/29] h-[37px] w-[111px]">
           <Link href={'/'}>
             <Image

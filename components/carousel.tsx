@@ -8,15 +8,15 @@ import Slider4 from '@/public/assets/slider/4.webp';
 import Slider5 from '@/public/assets/slider/5.webp';
 import Slider6 from '@/public/assets/slider/6.webp';
 import Slider7 from '@/public/assets/slider/7.webp';
-const Carousel = () => {
+const Carousel = ({ onClick }: any) => {
   const images = [
-    Slider1,
-    Slider2,
-    Slider3,
-    Slider4,
-    Slider5,
-    Slider6,
-    Slider7,
+    { images: Slider1, name: 'caesar' },
+    { images: Slider2, name: 'shogun' },
+    { images: Slider3, name: 'pharaoh' },
+    { images: Slider4, name: 'commando' },
+    { images: Slider5, name: 'gold_rush' },
+    { images: Slider6, name: 'speed_and_fury' },
+    { images: Slider7, name: 'wild_catch' },
   ];
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Carousel = () => {
 
   return (
     <div
-      className="relative w-full  overflow-x-hidden isolation"
+      className="relative w-full z-20  overflow-x-hidden isolation"
       onTouchStart={(e) => {
         const touchStartX = e.touches[0].clientX;
         e.currentTarget.dataset.touchStartX = touchStartX.toString();
@@ -61,9 +61,13 @@ const Carousel = () => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <div key={index} className="min-w-full">
+          <div
+            key={index}
+            onClick={() => onClick(image?.name)}
+            className="min-w-full"
+          >
             <Image
-              src={image}
+              src={image?.images}
               alt={`Slider ${index + 1}`}
               layout="responsive"
             />

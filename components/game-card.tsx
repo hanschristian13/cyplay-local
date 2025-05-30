@@ -17,12 +17,17 @@ const GameCard = ({
     <div className="min-w-full relative drop-shadow-lg">
       <button
         onClick={onSelectDetail}
-        className="absolute top-[24px] right-[10px] text-white"
+        className="absolute top-8 right-3 text-white"
       >
         <IoIosInformationCircleOutline size={23} />
       </button>
 
-      <Image src={imageSrc} alt={title} layout="responsive" />
+      <Image
+        onClick={onSelectDetail}
+        src={imageSrc}
+        alt={title}
+        layout="responsive"
+      />
       <div className="absolute bottom-0  w-full bg-white flex items-center justify-start rounded-b rounded-b-[25px] h-[58.7398px]">
         <div className="flex space-x-[23px] px-[15.53px]">
           <div className="text-[#72757A] text-[12px]">
@@ -66,8 +71,8 @@ const GameCard = ({
                 <path
                   d="M5.70764 4.81823H26.9064M26.9064 4.81823L23.1683 1.08005M26.9064 4.81823L23.1683 8.55641"
                   stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
                 <circle cx="1.35107" cy="4.81824" r="1" fill="white" />
               </svg>

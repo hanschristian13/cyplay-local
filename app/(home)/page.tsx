@@ -147,7 +147,15 @@ function MainComponent() {
 
   const data = __GAME_LIST__?.find((x) => x.category === selectedTab);
 
-  const [isModalOpen, setModalOpen] = useState(null);
+  const [isModalOpen, setModalOpen] = useState<any>(null);
+
+  const clickedOnCarousel = (selected: any) => {
+    const dataClicked = __GAME_LIST__
+      ?.find((x) => x.category === 'comming_soon')
+      ?.games?.find((x: any) => x?.key === selected);
+
+    setModalOpen(dataClicked);
+  };
 
   return (
     <>
@@ -156,9 +164,9 @@ function MainComponent() {
         onClose={() => setModalOpen(null)}
         data={isModalOpen}
       />
-      <div className="h-screen px-[23px] max-w-[640px] mx-auto">
-        <Carousel />
-        <div className="flex w-full h-[31.882px] space-x-[22px] -mt-[15px] !overflow-x-auto scrollbar-hide">
+      <div className="min-h-screen px-[23px] max-w-[640px] mx-auto">
+        <Carousel onClick={clickedOnCarousel} />
+        <div className="flex w-screen max-w-[640px] mx-auto h-[60.882px] space-x-[22px] -mt-[15px] overflow-x-auto scrollbar-hide sticky top-[70px] z-10 bg-background -mx-[23px] px-[23px] pt-4">
           {Object.keys(allCategories)?.map((key) => (
             <Link
               key={key}
