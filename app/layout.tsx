@@ -52,7 +52,9 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${inter.className} antialiased`}>
         <Header />
+
         {children}
+        <div className="h-[200px] w-min " />
       </body>
     </html>
   );

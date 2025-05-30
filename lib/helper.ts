@@ -49,6 +49,14 @@ import kaisa_header from '@/public/assets/details/kaisa.webp';
 import nasus_header from '@/public/assets/details/nasus.webp';
 import seraphine_header from '@/public/assets/details/seraphine.webp';
 import dota_header from '@/public/assets/details/dota.webp';
+import caesar_header from '@/public/assets/details/caesar.webp';
+import shogun_header from '@/public/assets/details/shogun.webp';
+import pharaoh_header from '@/public/assets/details/pharaoh.webp';
+import commando_header from '@/public/assets/details/commando.webp';
+import gold_rush_header from '@/public/assets/details/gold_rush.webp';
+import speed_and_fury_header from '@/public/assets/details/speed_and_fury.webp';
+import wild_catch_header from '@/public/assets/details/wild_catch.webp';
+
 // images preview
 import coc_reborn_preview from '@/public/assets/details/preview/coc_reborn.webp';
 import clash_heroes_preview from '@/public/assets/details/preview/clash_heroes.webp';
@@ -71,6 +79,14 @@ import kaisa_preview from '@/public/assets/details/preview/kaisa.webp';
 import nasus_preview from '@/public/assets/details/preview/nasus.webp';
 import seraphine_preview from '@/public/assets/details/preview/seraphine.webp';
 import dota_preview from '@/public/assets/details/preview/dota.webp';
+
+import caesar_preview from '@/public/assets/details/preview/caesar.webp';
+import shogun_preview from '@/public/assets/details/preview/shogun.webp';
+import pharaoh_preview from '@/public/assets/details/preview/pharaoh.webp';
+import commando_preview from '@/public/assets/details/preview/commando.webp';
+import gold_rush_preview from '@/public/assets/details/preview/gold_rush.webp';
+import speed_and_fury_preview from '@/public/assets/details/preview/speed_and_fury.webp';
+import wild_catch_preview from '@/public/assets/details/preview/wild_catch.webp';
 import { useEffect } from 'react';
 
 export const useDisableBodyScroll = (isActive: boolean) => {
@@ -132,6 +148,14 @@ export const getImageSrc = (key: string) => {
     nasus_header,
     seraphine_header,
     dota_header,
+    caesar_header,
+    shogun_header,
+    pharaoh_header,
+    commando_header,
+    gold_rush_header,
+    speed_and_fury_header,
+    wild_catch_header,
+
     // preview
     joss_joss_joss_preview,
     energ_super_laga_preview,
@@ -154,6 +178,13 @@ export const getImageSrc = (key: string) => {
     nasus_preview,
     seraphine_preview,
     dota_preview,
+    caesar_preview,
+    shogun_preview,
+    pharaoh_preview,
+    commando_preview,
+    gold_rush_preview,
+    speed_and_fury_preview,
+    wild_catch_preview,
   };
   return images[key] || '';
 };
