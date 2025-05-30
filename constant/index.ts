@@ -1,5 +1,59 @@
 export const __GAME_LIST__ = [
   {
+    category: 'comming_soon',
+    games: [
+      {
+        key: 'caesar',
+        volatility: 'medium',
+        rtp: 96.83,
+        maxwin: 2027,
+        betways: 25,
+      },
+      {
+        key: 'shogun',
+        volatility: 'low',
+        rtp: 96.0,
+        maxwin: 805.5,
+        betways: 243,
+      },
+      {
+        key: 'pharaoh',
+        volatility: 'low',
+        rtp: 96.24,
+        maxwin: 1800,
+        betways: 10,
+      },
+      {
+        key: 'commando',
+        volatility: 'low',
+        rtp: 95.93,
+        maxwin: 2263,
+        betways: 46656,
+      },
+      {
+        key: 'gold_rush',
+        volatility: 'medium',
+        rtp: 96.4,
+        maxwin: 3048,
+        betways: 20,
+      },
+      {
+        key: 'speed_and_fury',
+        volatility: 'medium',
+        rtp: 96.78,
+        maxwin: 3300,
+        betways: 3125,
+      },
+      {
+        key: 'wild_catch',
+        volatility: 'medium',
+        rtp: 96.72,
+        maxwin: 30000,
+        betways: 720,
+      },
+    ],
+  },
+  {
     category: 'legends',
     games: [
       {
@@ -81,30 +135,31 @@ export const __GAME_LIST__ = [
   },
   {
     category: 'supercell',
+
     games: [
       {
         key: 'coc_reborn',
         url: 'https://demo.cyberyokai.com/cyplay/slots/coc-reborn/?useMock=true&enableCheat=true',
         volatility: 'medium',
-        rtp: null,
-        maxwin: null,
-        betways: null,
+        rtp: 95.51,
+        maxwin: 5000,
+        betways: 'Pay any',
       },
       {
         key: 'clash_heroes',
         url: 'https://demo.cyberyokai.com/cyplay/slots/reskin-clash-heroes?useMock=true&enableCheat=true',
         volatility: 'medium',
-        rtp: null,
-        maxwin: null,
-        betways: null,
+        rtp: 96.78,
+        maxwin: 2992,
+        betways: 36,
       },
       {
         key: 'coc',
         url: 'https://demo.cyberyokai.com/cyplay/slots/reskin-coc?useMock=true&enableCheat=true',
         volatility: 'medium',
-        rtp: null,
-        maxwin: null,
-        betways: null,
+        rtp: 96.83,
+        maxwin: 2027,
+        betways: 25,
       },
     ],
   },
@@ -194,9 +249,9 @@ export const __GAME_LIST__ = [
         key: 'dota',
         url: 'https://demo.cyberyokai.com/cyplay/slots/dota-campaign/?useMock=true&enableCheat=true',
         volatility: 'medium',
-        rtp: null,
-        maxwin: null,
-        betways: null,
+        rtp: 96.83,
+        maxwin: 2027,
+        betways: 25,
       },
     ],
   },
