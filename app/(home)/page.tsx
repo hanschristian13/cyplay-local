@@ -74,14 +74,14 @@ import GameCard from '@/components/game-card';
 
 function MainComponent() {
   const allCategories: { [key: string]: any } = {
-    legends: 'Legends',
-    blockbuster: 'Blockbuster',
+    //legends: 'Legends',
+    //blockbuster: 'Blockbuster',
     // casual: 'Casual',
     // empire: 'Empire',
     indo_local: 'Indo Local',
-    supercell: 'SuperCell',
-    reskin: 'Reskin',
-    campaign: 'Campaign',
+    //supercell: 'SuperCell',
+    //reskin: 'Reskin',
+    //campaign: 'Campaign',
     // coming_soon: 'Coming Soon',
   };
 
@@ -143,7 +143,7 @@ function MainComponent() {
 
   const query = useSearchParams();
   const tab = query.get('tab');
-  const selectedTab = tab ? (allCategories[tab] ? tab : 'legends') : 'legends';
+  const selectedTab = tab ? (allCategories[tab] ? tab : 'indo_local') : 'indo_local';
 
   const data = __GAME_LIST__?.find((x) => x.category === selectedTab);
 
