@@ -1,12 +1,12 @@
 import React from 'react'
-import IconTelegram from '@/public/assets/telegram.svg'
-import IconWhatsapp from '@/public/assets/whatsapp.svg'
-import IconEmail from '@/public/assets/email.svg'
+import IconTelegram from '@/public/assets/telegram.png'
+import IconWhatsapp from '@/public/assets/whatsapp.png'
+import IconEmail from '@/public/assets/email.png'
 import Image from 'next/image'
 
 const About = () => {
   return (
-    <div className='flex items-center flex-col gap-y-3 text-white/60 text-xs mb-6'>
+    <div className='flex items-center flex-col gap-y-3 text-[#4C4C4C] text-[12px] text-xs mb-6'>
       <div className='flex gap-x-3'>
         <div className='flex gap-x-1 items-center'>
           <Image

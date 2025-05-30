@@ -1,14 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
-import CardFeatured1 from '@/public/assets/card-featured-1.webp'
-import CardFeatured2 from '@/public/assets/card-featured-2.webp'
-import CardFeatured3 from '@/public/assets/card-featured-3.webp'
+import CardFeatured1 from '@/public/assets/card-featured-1.png'
+import CardFeatured2 from '@/public/assets/card-featured-2.png'
+import CardFeatured3 from '@/public/assets/card-featured-3.png'
 
 const GameFeature = () => {
   return (
     <div className='container mx-auto max-w-6xl px-4'>
       <div className='flex flex-col gap-y-6'>
-        <h3 className='text-center leading-7'>we provide</h3>
+        <h3 className='text-center leading-7 font-semibold text-[24px] text-[#4D4D4D]'>Gaming Feature</h3>
         <div className='flex flex-col gap-y-3 mx-auto'>
           <Image
             alt='featured 1'

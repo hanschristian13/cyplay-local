@@ -7,12 +7,12 @@ import Provide from '@/components/provide'
 import AboutWelcome from '@/components/about-welcome'
 import GameFeature from '@/components/game-featured'
 import Sertification from '@/components/sertification'
-import ImageBgGamingFeatured from '@/public/assets/bg-gaming-featured.webp'
+//import ImageBgGamingFeatured from '@/public/assets/bg-gaming-featured.webp'
 import Transition from '@/components/transition'
 const page = () => {
   return (
     <Transition>
-      <div className='relative mt-[53px]'>
+      <div className='relative mt-[0px]'>
         <div className='absolute inset-0 w-full -z-[1]'>
           <div className='relative w-full max-w-[860px] mx-auto h-[734px] md:h-[934px]'>
             <Image
@@ -23,7 +23,7 @@ const page = () => {
               priority
               loading='eager'
               quality={100}
-              className='object-contain object-top'
+              className='object-contain object-top opacity-25'
             />
           </div>
         </div>
@@ -31,7 +31,7 @@ const page = () => {
           <AboutWelcome />
           <Provide />
           <div className='relative flex flex-col gap-y-[60px]'>
-            <Image
+            {/* <Image
               alt='sertification'
               src={ImageBgGamingFeatured.src}
               className='-z-[1] mt-8 mx-auto'
@@ -42,7 +42,7 @@ const page = () => {
                 objectFit: 'contain',
                 aspectRatio: '1/1'
               }}
-            />
+            /> */}
             <GameFeature />
             <Sertification />
           </div>

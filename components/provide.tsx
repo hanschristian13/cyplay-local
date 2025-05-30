@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import ImageProvide from '@/public/assets/content.webp'
+import ImageProvide from '@/public/assets/content.png'
 
 const Provide = () => {
   return (
     <div className='container mx-auto max-w-7xl px-4'>
       <div className='flex flex-col gap-y-6'>
-        <h3 className='text-center leading-7 text-white'>We Provide</h3>
+        <h3 className='text-center leading-7 text-[#4D4D4D] font-semibold text-[24px]'>We Provide</h3>
         <div className='relative max-w-4xl mx-auto'>
           <Image
             alt='provide'
