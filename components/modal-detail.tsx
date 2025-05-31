@@ -83,14 +83,18 @@ const ModalDetail = ({ isOpen, onClose, data }: any) => {
           />
 
           <button
-            onClick={() => window.open(data?.url, '_blank')}
+            onClick={() => {
+              if (!!data?.url) {
+                window.open(data?.url, '_blank');
+              }
+            }}
             className="rounded-[50px] py-[14px] w-full shadow-[0px_4px_15px_rgba(252,157,5,0.75)] relative overflow-hidden px-4 py-2 text-white font-bold"
             style={{
               backgroundImage: 'linear-gradient(to top, #FFE53F -70%, #FBA10F)',
               textShadow: '0px 0px 5px white',
             }}
           >
-            Play Demo
+            {!!data?.url ? 'Play Demo' : 'Coming soon'}
           </button>
         </div>
       </div>
